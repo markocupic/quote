@@ -1,0 +1,23 @@
+
+<figure class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+    <blockquote><p><?php echo nl2br($this->quoteText); ?></p></blockquote>
+    <figcaption>
+
+        <?php if ($this->imgSRC): ?>
+        <img src="<?php echo $this->imgSRC; ?>" width="<?php echo $this->imageWidth; ?>" height="<?php echo $this->imageHeight; ?>" alt="<?php echo $this->alt; ?>">
+        <?php endif; ?>
+
+        <?php if ($this->quoteAuthor): ?>
+        <?php if ($this->quoteUrl && !$this->quoteOrganization): ?><a href="<?php echo $this->quoteUrl; ?>"><?php endif; ?>
+        <span class="autor"><?php echo $this->quoteAuthor; ?></span>
+        <?php if ($this->quoteUrl && !$this->quoteOrganization): ?></a><?php endif; ?>
+        <?php endif; ?>
+
+        <?php if (strlen($this->quoteOrganization)): ?>
+        <?php if ($this->quoteUrl): ?><a href="<?php echo $this->quoteUrl; ?>"><?php endif; ?>
+        <span class="org"><?php echo $this->quoteOrganization; ?></span>
+        <?php if ($this->quoteUrl): ?></a><?php endif; ?>
+        <?php endif; ?>
+
+    </figcaption>
+</figure>
